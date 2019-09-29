@@ -1,2 +1,2 @@
-# Psychic-game
+# Word-Guess-Game
 Learning JavaScript
