@@ -44,6 +44,11 @@
                 <p id="correctChoice"></p>
 
                 <p id="alreadyGuessed"></p>
+
+                <p id="blankAnswer"></p>
+
+                <input id="user-text" placeholder="your guess">
+                <button id="btn1">submit</button>
             
             </div>
 
@@ -61,7 +66,9 @@
 
         //shoe brands array, wins, losses, number of guesses, letters guessed
 
-        var shoeBrands = ["nike", "addidas", "puma", "vans", "reebok", "toms" ]
+        var shoeBrands = ["nike", "addidas", "puma", "vans", "reebok", "toms" ];
+
+        var shoe = shoeBrands[Math.floor(Math.random() * shoeBrands.length)];
 
         var wins = 0;
 
@@ -69,10 +76,104 @@
 
         var numberOfGuesses = 10;
 
-        var lettersGuessed = []
+        var lettersGuessed = []; 
+
+        var answerArray = "";
+          for (var i = 0; i < shoe.length; i++) {
+                answerArray[i] = "_";
+
+                
+        }
+
+
+        var remainingLetters = shoe.length;
+        console.log(remainingLetters);
+
+        //Functions
+        //=======================================================================
+
+        //pick shoe, track wins, track losses, track number of guesses, push letters guessed
+
+        function pickShoe() {
+            
+            for ( var i = 0; i < shoe.length; i++) {
+                
+                console.log(shoe[i]);
+            var answer = shoe.length
+
+            
+
+              }
+                
+        }
+
+        function display(){
+          //display "_" for length for shoe
+          for( var i = 0; i < shoe.length; i++) {
+            answerArray += "_ ";
+
+
+          }
+          
+          
+          
+          document.write(answerArray);
+          
+            
+         
 
 
 
+
+        }
+        
+
+       
+
+
+        
+
+        
+
+        //function wins() {
+
+
+
+       // };
+
+        //function losses(){
+
+        //};
+
+        //Call functions and Event listeners
+        //===============================================================================
+
+        pickShoe();
+        display();
+        //wins();
+        //losses();
+        document.onkeyup = function(event){
+
+              var userInput = event.key.toLowerCase();
+              console.log("letter guessed: " + userInput);
+              
+              lettersGuessed.push(userInput);
+              console.log(`letters guessed array ${lettersGuessed}`);
+
+              
+
+        }
+
+        document.write(lettersGuessed);
+          
+          
+        
+
+
+
+
+
+        
 
 
     </script>
